@@ -1,15 +1,27 @@
 import { Component, OnInit } from '@angular/core';
+import { SearchService } from 'src/app/services/search.service';
 
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
-  styleUrls: ['./search.component.css']
+  styleUrls: ['./search.component.css'],
+  providers: [SearchService]
 })
 export class SearchComponent implements OnInit {
 
-  constructor() { }
+  restaurants: any;
+  constructor(private searchService: SearchService) { }
 
   ngOnInit() {
+  }
+
+  fetchRestaurants() {
+    this.restaurants=[];
+    this.searchService.getRestaurants().subscribe(
+      (data: any[])=> {
+          this.restaurants = data;
+          console.log(this.restaurants);
+      });
   }
 
 }
