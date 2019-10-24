@@ -12,7 +12,7 @@ export class SearchService {
   constructor(private httpClient:HttpClient) { }
 
   public getRestaurants() {
-    return this.httpClient.get(`https://developers.zomato.com/api/v2.1/search?entity_id=291&entity_type=city&q=Asian&count=20`,
+    return this.httpClient.get(`https://developers.zomato.com/api/v2.1/search?entity_id=291&entity_type=city&q=Asian`,
                     {headers: this.headers});
   }
 

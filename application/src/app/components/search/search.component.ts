@@ -19,6 +19,7 @@ export class SearchComponent implements OnInit {
     this.restaurants=[];
     this.searchService.getRestaurants().subscribe(
       (data: any[])=> {
+        console.log(data);
           this.restaurants = data;
           console.log(this.restaurants);
       });
