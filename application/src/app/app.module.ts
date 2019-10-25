@@ -1,11 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { SearchComponent } from './components/search/search.component';
 import { SearchService } from './services/search.service';
+//import {platformBrowserDynamic} from "@angular/platform-browser-dynamic";
 
 @NgModule({
   declarations: [
@@ -15,7 +18,9 @@ import { SearchService } from './services/search.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    BrowserAnimationsModule
   ],
   providers: [SearchService],
   bootstrap: [AppComponent]

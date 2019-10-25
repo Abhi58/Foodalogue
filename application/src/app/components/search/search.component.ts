@@ -9,17 +9,19 @@ import { SearchService } from 'src/app/services/search.service';
 })
 export class SearchComponent implements OnInit {
 
+  city = 291;
+  cuisine = 'Asian';
   restaurants: any;
   constructor(private searchService: SearchService) { }
 
   ngOnInit() {
   }
 
-  fetchRestaurants() {
+  fetchRestaurants(formData) {
+    console.log(formData);
     this.restaurants=[];
-    this.searchService.getRestaurants().subscribe(
-      (data: any[])=> {
-        console.log(data);
+    this.searchService.getRestaurants(this.city,this.cuisine).subscribe(
+      (data)=> {
           this.restaurants = data;
           console.log(this.restaurants);
       });
