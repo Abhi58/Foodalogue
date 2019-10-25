@@ -9,8 +9,6 @@ import { SearchService } from 'src/app/services/search.service';
 })
 export class SearchComponent implements OnInit {
 
-  city = 291;
-  cuisine = 'Asian';
   restaurants: any;
   constructor(private searchService: SearchService) { }
 
@@ -19,9 +17,9 @@ export class SearchComponent implements OnInit {
 
   fetchRestaurants(formData) {
     console.log(formData);
-    this.restaurants=[];
-    this.searchService.getRestaurants(this.city,this.cuisine).subscribe(
-      (data)=> {
+    this.restaurants = [];
+    this.searchService.getRestaurants(formData.city, formData.cuisine).then(
+      (data) => {
           this.restaurants = data;
           console.log(this.restaurants);
       });
