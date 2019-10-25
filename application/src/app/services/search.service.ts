@@ -10,7 +10,6 @@ export class SearchService {
 
   constructor(private httpClient: HttpClient) { }
 
-
   public getRestaurants(cityName, cuisineName): Promise<any> {
     return this.httpClient.get<Res>(` https://developers.zomato.com/api/v2.1/cities?q=${cityName}`,
                     {headers: this.headers})
