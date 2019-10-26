@@ -1,0 +1,15 @@
+.searchForm{
+    margin-right: 10px;
+}
+
+.mat-form-field-flex > .mat-form-field-infix { padding: 0.4em 0em 1em 0em !important;}
+
+.container{
+    width: 100%;
+    margin: auto !important;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+}

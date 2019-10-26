@@ -1,19 +1,18 @@
+<br><br><br>
 
 <div class="container">
-    <!-- <div class="col-md-9 col-md-offset-3"> -->
-          <!-- <div id="criteria-inside"> -->
-      <div class="form-group col-md-5 col-sm-6">
+
         <form #restaurants = "ngForm" (ngSubmit) = "fetchRestaurants(restaurants.value)">
-            <div class="form-group col-md-5 col-sm-6">
-                <input type="text" name="city" placeholder="City" ngModel>
-            </div>
-            <div class="form-group col-md-5 col-sm-6">
-                <input type="text" name="cuisine" placeholder="Cuisine" ngModel>
-            </div>
-            <div class="form-group col-md-5 col-sm-6">
-                <button type="submit" class="btn btn-primary">Search</button>
-            </div>
+            <mat-form-field style="margin-bottom: -1.25em" appearance="outline" class="searchForm">
+                <input matInput type="text" name="city" placeholder="City" ngModel>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="searchForm">
+                <input matInput type="text" name="cuisine" placeholder="Cuisine" ngModel>
+            </mat-form-field>
+            <button mat-raised-button color="primary" type="submit" class="searchForm">Search</button>
         </form>
-      </div>
 
 </div>
+
+

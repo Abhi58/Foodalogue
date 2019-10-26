@@ -9,7 +9,7 @@ import { SearchComponent } from './components/search/search.component';
 import { SearchService } from './services/search.service';
 
 import {MatButtonModule} from '@angular/material/button';
-import {MatMenuModule} from '@angular/material';
+import {MatMenuModule, MatFormFieldModule, MatInputModule} from '@angular/material';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -18,6 +18,8 @@ import { MatListModule } from '@angular/material/list';
 import {MatRippleModule} from '@angular/material/core';
 import {MatCardModule} from '@angular/material/card';
 import {MatDividerModule} from '@angular/material/divider';
+import { FlexLayoutModule } from '@angular/flex-layout';
+
 
 import { NavComponent } from './components/nav/nav.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -44,6 +46,10 @@ import { FooterComponent } from './components/footer/footer.component';
     MatCardModule,
     MatDividerModule,
     HttpClientModule,
+    MatFormFieldModule,
+    MatInputModule,
+    FlexLayoutModule,
+
     FormsModule,
     BrowserAnimationsModule
   ],
