@@ -12,19 +12,26 @@ import { ViewEncapsulation } from '@angular/core';
 export class SearchComponent implements OnInit {
 
   restaurants: any;
+  list = false;
   constructor(private searchService: SearchService) { }
 
   ngOnInit() {
   }
 
   fetchRestaurants(formData) {
-    console.log(formData);
     this.restaurants = [];
     this.searchService.getRestaurants(formData.city, formData.cuisine).then(
       (data) => {
+        if (data != null) {
           this.restaurants = data;
+          this.list = true;
+          console.log(this.list);
           console.log(this.restaurants);
-      });
+          //console.log(this.restaurants[0].restaurant.R.res_id);
+        } else {
+          alert('Enter Valid Details');
+        }
+    });
   }
 
 }
