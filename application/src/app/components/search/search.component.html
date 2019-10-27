@@ -1,4 +1,4 @@
-<br>
+<br><br>
 
 <div class="col-sm-12">
         <form #rest = "ngForm" (ngSubmit) = "fetchRestaurants(rest.value)">
@@ -15,8 +15,9 @@
         </form>
 </div>
 
-<div *ngIf = "list" class="col-sm-12">
-    <h3>Restaurants :  </h3>
+
+<div *ngIf = "list" class="row">
+    <h3 style="font-weight: bold;color: indigo">Restaurants :  </h3>
     <app-display [restaurantData]="restaurants"></app-display>   
 </div>
 

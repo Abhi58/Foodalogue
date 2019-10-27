@@ -2,6 +2,7 @@
 
 .mat-toolbar {
   background: indigo;
+  overflow: hidden;
 }
 
 .mat-toolbar.mat-primary {

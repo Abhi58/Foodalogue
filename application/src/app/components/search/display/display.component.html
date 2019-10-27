@@ -1,7 +1,23 @@
-<div class="container-fluid">
+<br>
+<div class="row well">
     <div *ngIf="restaurantData" class="row">
         <div *ngFor="let res of restaurantData">
-                <mat-card class="contents">{{res.restaurant.name}}</mat-card>
+            <mat-card class="mat-elevation-z4 contents">
+                <mat-card-header>
+                    <div class="col-sm-2">
+                        <a href="{{res.restaurant.url}}">
+                            <img class="img-responsive imgsz" src="{{res.restaurant.thumb}}" alt="No Image Available">
+                        </a>
+                    </div>
+                    <div class="col-sm-6">
+                        <mat-card-title>
+                            <p class="cuisine">{{res.restaurant.cuisines}}</p>
+                            <a href="{{res.restaurant.url}}" id="resname">{{res.restaurant.name}}</a>
+                        </mat-card-title>
+                    </div>
+                    
+                </mat-card-header>
+            </mat-card>
         </div>
     </div>
 </div>
