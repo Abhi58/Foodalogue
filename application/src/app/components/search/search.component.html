@@ -1,5 +1,5 @@
 <br><br>
-
+<div class="row">
 <div class="col-sm-12">
         <form #rest = "ngForm" (ngSubmit) = "fetchRestaurants(rest.value)">
             <div class="col-sm-3"></div>
@@ -11,14 +11,15 @@
                 <input matInput type="text" name="cuisine" placeholder="Cuisine" ngModel>
             </mat-form-field>
 
-            <button mat-raised-button color="primary" type="submit" class="col-sm-1 searchForm">Search</button>
+            <button mat-raised-button color="primary" type="submit" class="searchForm"><mat-icon>search</mat-icon></button>
         </form>
 </div>
 
 
 <div *ngIf = "list" class="row">
-    <h3 style="font-weight: bold;color: indigo">Restaurants :  </h3>
+    <h3 style="font-weight: bold;color: indigo;">Restaurants :</h3>
     <app-display [restaurantData]="restaurants"></app-display>   
 </div>
 
+</div>
 
