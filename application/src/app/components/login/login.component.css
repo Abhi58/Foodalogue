@@ -1,0 +1,8 @@
+.btn{
+    align-self: center;
+    margin-bottom: 10px !important;
+}
+
+.mat-card-header.mat-card-title{
+    text-decoration: underline !important;
+}
