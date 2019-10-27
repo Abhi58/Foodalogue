@@ -1,5 +1,6 @@
-.btn{
-    align-self: center;
+.loginbutton{
+    width: 30%;
+    align-self: center !important;
     margin-bottom: 10px !important;
 }
 
