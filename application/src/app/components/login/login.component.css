@@ -7,3 +7,12 @@
 .mat-card-header.mat-card-title{
     text-decoration: underline !important;
 }
+
+.reglink{
+    text-align: center;
+}
+
+#regroute{
+    color: indigo !important;
+    text-decoration: none;
+}

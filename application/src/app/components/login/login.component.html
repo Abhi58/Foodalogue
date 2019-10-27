@@ -8,13 +8,19 @@
         <form class="form" name="form" novalidate>
             <mat-card-content fxLayout="column">
                 <mat-form-field>
-                  <input matInput type="text" placeholder="Email" required>
+                  <input matInput type="email" placeholder="Email" required>
                 </mat-form-field>
                 <mat-form-field>
                   <input type="password" matInput placeholder="Password" required>
                 </mat-form-field>
               </mat-card-content>
-              <button mat-raised-button color="primary" class="btn-block loginbutton" >Login</button>
+              <mat-card-actions align="center">
+              <button mat-raised-button color="primary" style="width: 30%">Login</button>
+            </mat-card-actions>
+
+            <div class="reglink">
+              <a id="regroute" [routerLink]="['/register']">New User? Click here to Sign Up</a>
+            </div>
         </form>
 
 
