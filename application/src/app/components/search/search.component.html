@@ -2,16 +2,18 @@
 <div class="row">
 <div class="col-sm-12">
         <form #rest = "ngForm" (ngSubmit) = "fetchRestaurants(rest.value)">
-            <div class="col-sm-3"></div>
-            <mat-form-field appearance="outline" class="col-sm-2">
+            <div class="col-sm-2"></div>
+            <mat-form-field appearance="outline" class="col-sm-3">
                 <input matInput type="text" name="city" placeholder="City" ngModel>
             </mat-form-field>
 
-            <mat-form-field appearance="outline" class="col-sm-2">
+            <mat-form-field appearance="outline" class="col-sm-3">
                 <input matInput type="text" name="cuisine" placeholder="Cuisine" ngModel>
             </mat-form-field>
-
-            <button mat-raised-button color="primary" type="submit" class="searchForm"><mat-icon>search</mat-icon></button>
+            <div class="col-sm-2">
+                    <button mat-raised-button color="primary" type="submit" class="searchForm"><mat-icon>search</mat-icon>Search</button>
+            </div>
+            
 
         </form>
 </div>
