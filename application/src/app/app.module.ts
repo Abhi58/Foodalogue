@@ -23,13 +23,15 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { NavComponent } from './components/nav/nav.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { DisplayComponent } from './components/search/display/display.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SearchComponent,
     NavComponent,
-    FooterComponent
+    FooterComponent,
+    DisplayComponent
   ],
   imports: [
     BrowserModule,
@@ -49,7 +51,6 @@ import { FooterComponent } from './components/footer/footer.component';
     MatFormFieldModule,
     MatInputModule,
     FlexLayoutModule,
-
     FormsModule,
     BrowserAnimationsModule
   ],

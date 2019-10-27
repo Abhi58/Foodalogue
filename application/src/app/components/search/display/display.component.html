@@ -1,0 +1,7 @@
+<div class="container-fluid">
+    <div *ngIf="restaurantData" class="row">
+        <div *ngFor="let res of restaurantData">
+                <mat-card class="contents">{{res.restaurant.name}}</mat-card>
+        </div>
+    </div>
+</div>
