@@ -19,6 +19,8 @@ import {MatRippleModule} from '@angular/material/core';
 import {MatCardModule} from '@angular/material/card';
 import {MatDividerModule} from '@angular/material/divider';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { RatingModule } from 'ngx-bootstrap/rating';
 
 
 import { NavComponent } from './components/nav/nav.component';
@@ -56,7 +58,9 @@ import { RegisterComponent } from './components/register/register.component';
     MatInputModule,
     FlexLayoutModule,
     FormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    NgbModule,
+    RatingModule.forRoot()
   ],
   providers: [SearchService],
   bootstrap: [AppComponent]
