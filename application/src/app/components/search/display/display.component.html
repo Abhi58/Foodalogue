@@ -1,7 +1,7 @@
 <br>
 <div class="row well col-sm-12">
     <div *ngIf="restaurantData">
-        <div *ngFor="let res of restaurantData">
+        <div *ngFor="let res of restaurantData;index as i">
             <mat-card class="mat-elevation-z4 contents">
                 <mat-card-header fxLayout="row">
                     <div class="col-sm-3">
@@ -10,7 +10,6 @@
                         </a>
                     </div>
                     <div class="col-sm-12">
-
                                     <mat-card-title>
                                         <p class="cuisine">{{res.restaurant.cuisines}}</p>
                                         <a href="{{res.restaurant.url}}" id="resname">{{res.restaurant.name}}</a>
@@ -22,6 +21,8 @@
                                         <span class="keys col-sm-4">PRICE :</span>{{res.restaurant.currency}}{{res.restaurant.average_cost_for_two}}
                                         <br>
                                         <span class="keys col-sm-4">RATING :</span>{{res.restaurant.user_rating.aggregate_rating}}
+                                        <br>
+                                        <span class="keys col-sm-4">REVIEW :</span>{{res.restaurant.user_rating.rating_text}}
                                     </mat-card-content>
                                     <mat-divider></mat-divider>
                                     <mat-card-footer>
@@ -34,14 +35,20 @@
                                         <div class="links col-sm-4">
                                             <button mat-button>
                                                 <i class="material-icons" style="color: rgb(68, 68, 68);">directions</i>
-                                                <span class="btncntnt"> Get Directions</span>
+                                                <span class="btncntnt"> View in Maps</span>
                                             </button>
                                         </div>
-                                        <div class="links col-sm-4">
-                                                <button mat-button>
-                                                    <i class="material-icons" style="color: rgb(68, 68, 68);">library_add</i>
-                                                    <span class="btncntnt"> Add to Favorites</span>
-                                                </button>
+                                        <div class="links col-sm-4" *ngIf=" save[i]">
+                                            <button mat-button (click)="saveRestaurant(res,i)">
+                                                <i class="material-icons" style="color: rgb(68, 68, 68);">library_add</i>
+                                                <span class="btncntnt"> Add to Favorites</span>
+                                            </button>
+                                        </div>
+                                        <div class="links col-sm-4" *ngIf="!visible[i] || !save[i]">
+                                            <button mat-button disabled>
+                                                <i class="material-icons" style="color: rgb(68, 68, 68);">done</i>
+                                                <span class="btncntnt"> Added to Favorites</span>
+                                            </button>
                                         </div>
                                     </mat-card-footer>
                                     
