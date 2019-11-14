@@ -1,3 +1,4 @@
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -18,6 +19,7 @@ import { MatListModule } from '@angular/material/list';
 import {MatRippleModule} from '@angular/material/core';
 import {MatCardModule} from '@angular/material/card';
 import {MatDividerModule} from '@angular/material/divider';
+import {MatPaginatorModule} from '@angular/material/paginator';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { RatingModule } from 'ngx-bootstrap/rating';
@@ -28,6 +30,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { DisplayComponent } from './components/search/display/display.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
+import { MapComponent } from './components/map/map.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +40,8 @@ import { RegisterComponent } from './components/register/register.component';
     FooterComponent,
     DisplayComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    MapComponent
   ],
   imports: [
     BrowserModule,
@@ -52,6 +56,7 @@ import { RegisterComponent } from './components/register/register.component';
     MatListModule,
     MatRippleModule,
     MatCardModule,
+    MatPaginatorModule,
     MatDividerModule,
     HttpClientModule,
     MatFormFieldModule,
@@ -66,3 +71,4 @@ import { RegisterComponent } from './components/register/register.component';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+

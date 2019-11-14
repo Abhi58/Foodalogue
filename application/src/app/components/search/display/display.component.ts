@@ -9,6 +9,10 @@ export class DisplayComponent implements OnInit {
   @Input() restaurantData: any;
   visible: boolean[];
   save: boolean[];
+  map: any;
+  searchManager: any;
+
+  directionsLink = 'https://www.google.com/maps/search/?api=1&query=47.5951518,-122.3316393&query_place_id=ChIJKxjxuaNqkFQR3CK6O1HNNqY';
 
   constructor() {
 
