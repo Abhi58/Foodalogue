@@ -11,8 +11,9 @@ export class DisplayComponent implements OnInit {
   save: boolean[];
   map: any;
   searchManager: any;
+  name: string;
+  address: string;
 
-  directionsLink = 'https://www.google.com/maps/search/?api=1&query=47.5951518,-122.3316393&query_place_id=ChIJKxjxuaNqkFQR3CK6O1HNNqY';
 
   constructor() {
 
@@ -35,4 +36,9 @@ export class DisplayComponent implements OnInit {
     this.save[index] = this.visible[index];
   }
 
+  goToMaps(restaurant) {
+    this.name = restaurant.restaurant.name;
+    this.address = restaurant.restaurant.location.address;
+    window.location.href = 'https://www.google.com/maps/search/?api=1&query=' + this.name + ',' + this.address;
+  }
 }
