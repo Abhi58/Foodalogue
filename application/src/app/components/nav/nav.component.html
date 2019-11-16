@@ -2,16 +2,21 @@
   <mat-toolbar color="primary" [class.mat-elevation-z8]="true">
     Foodalogue
     <button mat-button class="button-pad"  [routerLink]="['/home']"> <mat-icon class="icon-pad" >home</mat-icon> Home</button>
-    <button mat-button> <mat-icon class="icon-pad">star</mat-icon> Favourites</button>
+    <button mat-button *ngIf = 'loggedIn'> <mat-icon class="icon-pad">star</mat-icon> Favourites</button>
   
     <span class="spacer"></span>
-    <button mat-button color ="warm" [matMenuTriggerFor]="menu"> <mat-icon >account_circle</mat-icon> Account
+    <button mat-button color ="warm" [matMenuTriggerFor]="menu" *ngIf = 'account_disp'> <mat-icon >account_circle</mat-icon>Account
       <mat-icon >arrow_drop_down</mat-icon>
     
     </button>
+    <button mat-button color ="warm" [matMenuTriggerFor]="menu" *ngIf = 'loggedIn'> <mat-icon >account_circle</mat-icon> {{ user | titlecase}}
+      <mat-icon >arrow_drop_down</mat-icon>
+    </button>
+     <!--<div *ngIf = 'loggedIn'> {{ user.user_name}} </div>-->
     <mat-menu #menu="matMenu">
-      <button mat-menu-item [routerLink]="['/login']">Login</button>
-      <button mat-menu-item [routerLink]="['/register']">Sign Up</button>
+      <button mat-menu-item [routerLink]="['/login']" *ngIf = 'account_disp'>Login</button>
+      <button mat-menu-item [routerLink]="['/register']" *ngIf = 'account_disp'>Sign Up</button>
+      <button mat-menu-item [routerLink]="['/home']"   *ngIf = 'loggedIn' (click) = "reset()">Log Out</button>
     </mat-menu>
   
   </mat-toolbar>
