@@ -1,7 +1,8 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, Output } from '@angular/core';
 import { Observable } from 'rxjs';
 import { UserService } from 'src/app/services/user.service';
 import { FavoritesService } from 'src/app/services/favorites.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -11,10 +12,13 @@ import { FavoritesService } from 'src/app/services/favorites.service';
   
 })
 export class NavComponent implements OnInit{
+
   loggedIn = false;
   account_disp =true;
   user:any;
-  constructor(private userService: UserService, private favorite: FavoritesService) {
+  user_id: any;
+
+  constructor(private userService: UserService, private favorite: FavoritesService, private router: Router) {
 
   }
 
@@ -28,7 +32,8 @@ export class NavComponent implements OnInit{
         this.loggedIn = true;
         this.account_disp = false;
         this.user = data[0].user_first_name;
-        this.favorite.setName(this.user);
+        this.user_id = data[0].user_name;
+        this.favorite.setName(this.user_id);
         this.userService.isLoggedIn = true;
         
       }
@@ -46,6 +51,7 @@ reset(){
   this.account_disp =true;
   this.userService.isLoggedIn = false;
 }
+
 
 }
 

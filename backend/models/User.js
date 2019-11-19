@@ -30,4 +30,4 @@ const UserSchema = mongoose.Schema({
 });
 
 
-module.exports = mongoose.model('Favorites', FavoriteSchema);
+module.exports = mongoose.model('User', UserSchema);

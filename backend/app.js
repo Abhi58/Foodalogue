@@ -1,6 +1,7 @@
 const express = require('express');
 
 const app = express();
+var cors = require('cors')
 
 const mongoose = require('mongoose');
 const bodyparser = require('body-parser');
@@ -8,15 +9,19 @@ require('dotenv/config');
 
 app.use(bodyparser.json());
 
-require('./routes/favorites.js')(app);
+app.use(cors());
 
-//app.use('/users',usersRoutes )
+
+require('./routes/users.js')(app);
+
+require('./routes/favorites')(app);
+
 
 app.get('/', (req, res)=> {
 
     res.send('We are on home')
 });
 
-mongoose.connect(process.env.DB_CONNECTION, ()=> console.log('Connnected to DB'));
+mongoose.connect(process.env.DB_CONNECTION,{ useUnifiedTopology: true ,useNewUrlParser: true } ,()=> console.log('Connnected to DB'));
 
 app.listen(3000);

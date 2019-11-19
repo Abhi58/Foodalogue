@@ -7,6 +7,8 @@ export const environment = {
   loginUrl: 'http://localhost:3000/login',
   signupUrl: 'http://localhost:3000/signup',
   favoritesUrl: 'http://localhost:3000/favorites',
+  usersFavoritesUrl: 'http://localhost:3000/allFavorites',
+
   debugMode: false
 };
 

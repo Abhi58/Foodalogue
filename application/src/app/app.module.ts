@@ -31,6 +31,9 @@ import { DisplayComponent } from './components/search/display/display.component'
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { MapComponent } from './components/map/map.component';
+import { FavoritesComponent } from './components/favorites/favorites.component';
+import { FavoritesService } from './services/favorites.service';
+import { UserService } from './services/user.service';
 
 @NgModule({
   declarations: [
@@ -41,7 +44,8 @@ import { MapComponent } from './components/map/map.component';
     DisplayComponent,
     LoginComponent,
     RegisterComponent,
-    MapComponent
+    MapComponent,
+    FavoritesComponent
   ],
   imports: [
     BrowserModule,
@@ -67,7 +71,7 @@ import { MapComponent } from './components/map/map.component';
     NgbModule,
     RatingModule.forRoot()
   ],
-  providers: [SearchService],
+  providers: [SearchService, FavoritesService, UserService, NavComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Output } from '@angular/core';
 import { UserService } from './user.service';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
@@ -10,8 +10,9 @@ export class FavoritesService {
 
   name: string;
   userId: any;
+  favoritesData: any;
 
-  constructor(private user: UserService, private http:HttpClient) { }
+  constructor(private user: UserService, private http: HttpClient) { }
   httpOptions = {
     headers: new HttpHeaders({'Content-Type':  'application/json', 'Access-Control-Allow-Origin' : '*' }),
     };
@@ -23,14 +24,24 @@ export class FavoritesService {
   getName() {
     return this.name;
   }
+  
+    saveFavorite(restaurantUrl, restaurantThumb,restaurantCuisine,restaurantName, restaurantAddress, userRating, ratingText, restaurantMenuUrl) {
+      this.userId = this.getName();
+      console.log(this.userId);
 
-  saveFavorite(restaurant_url, restaurant_thumb,restaurant_cuisine,restaurant_name, restaurant_address, user_rating, rating_text, restaurant_menu_url) {
-    this.userId = this.getName();
+      return this.http.post(environment.favoritesUrl, {'user_id': this.userId, 'restaurant_url': restaurantUrl, 'restaurant_thumb': restaurantThumb, 'restaurant_cuisine': restaurantCuisine, 'restaurant_name': restaurantName, 'restaurant_address': restaurantAddress, 'user_rating': userRating, 'rating_text': ratingText, 'restaurant_menu_url': restaurantMenuUrl }, this.httpOptions)//send post request
+        .toPromise()
+        .then((res) => res)
+        .catch((err) => err.message);
 
-    return this.http.post(environment.favoritesUrl, {'user_id': this.userId, 'restaurant_url': restaurant_url, 'restaurant_thumb': restaurant_thumb, 'restaurant_cuisine': restaurant_cuisine, 'restaurant_name': restaurant_name, 'restaurant_address': restaurant_address, 'user_rating': user_rating, 'rating_text': rating_text, 'restaurant_menu_url': restaurant_menu_url }, this.httpOptions)//send post request
-      .toPromise()
-      .then((res) => res )
-      .catch((err) => err.message);
+      }
 
+  getFavorites(userName) {
+    return this.http.post(environment.usersFavoritesUrl, {user_id: userName}, this.httpOptions)
+    .toPromise()
+    .then((res) => res )
+    .catch((err) => err.message);
   }
+
+
 }

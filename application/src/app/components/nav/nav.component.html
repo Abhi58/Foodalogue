@@ -2,7 +2,7 @@
   <mat-toolbar color="primary" [class.mat-elevation-z8]="true">
     Foodalogue
     <button mat-button class="button-pad"  [routerLink]="['/home']"> <mat-icon class="icon-pad" >home</mat-icon> Home</button>
-    <button mat-button *ngIf = 'loggedIn'> <mat-icon class="icon-pad">star</mat-icon> Favourites</button>
+    <button mat-button *ngIf = 'loggedIn' [routerLink]="['/favorites']"> <mat-icon class="icon-pad">star</mat-icon> Favourites</button>
   
     <span class="spacer"></span>
     <button mat-button color ="warm" [matMenuTriggerFor]="menu" *ngIf = 'account_disp'> <mat-icon >account_circle</mat-icon>Account

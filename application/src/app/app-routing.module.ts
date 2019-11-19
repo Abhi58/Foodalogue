@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { SearchComponent } from './components/search/search.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
+import { FavoritesComponent } from './components/favorites/favorites.component';
 
 
 const routes: Routes = [
@@ -22,6 +23,10 @@ const routes: Routes = [
   {
     path: 'register',
     component: RegisterComponent
+  },
+  {
+    path: 'favorites',
+    component: FavoritesComponent
   }
 ];
 
