@@ -16,7 +16,7 @@
     <mat-menu #menu="matMenu">
       <button mat-menu-item [routerLink]="['/login']" *ngIf = 'account_disp'>Login</button>
       <button mat-menu-item [routerLink]="['/register']" *ngIf = 'account_disp'>Sign Up</button>
-      <button mat-menu-item [routerLink]="['/home']"   *ngIf = 'loggedIn' (click) = "reset()">Log Out</button>
+      <button mat-menu-item [routerLink]="['/']"   *ngIf = 'loggedIn' (click) = "reset()">Log Out</button>
     </mat-menu>
   
   </mat-toolbar>

@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FavoritesService } from 'src/app/services/favorites.service';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-display',
@@ -17,15 +18,25 @@ export class DisplayComponent implements OnInit {
   restaurant_url: any; restaurant_thumb: any; restaurant_cuisine: any; restaurant_name: any;
   restaurant_address: any; user_rating: any;
   restaurant_menu_url: any; rating_text: any;
+  loggedIn: boolean;
 
 
-  constructor(private favorite: FavoritesService) {
+  constructor(private favorite: FavoritesService, private userService: UserService) {
 
    }
 
   ngOnInit() {
     this.visible = new Array(this.restaurantData.length).fill(true);
     this.save = new Array(this.restaurantData.length).fill(true);
+
+    if(this.userService.isLoggedIn == true){
+      this.loggedIn = true;
+    } else{
+      this.loggedIn = false;
+    }
+
+    console.log(this.loggedIn);
+
   }
 
   saveRestaurant(restaurant, index) {
@@ -65,4 +76,6 @@ export class DisplayComponent implements OnInit {
     this.address = restaurant.restaurant.location.address;
     window.location.href = 'https://www.google.com/maps/search/?api=1&query=' + this.name + ',' + this.address;
   }
+
+
 }

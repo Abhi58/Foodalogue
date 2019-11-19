@@ -6,6 +6,8 @@ import { environment } from './../../environments/environment';
 })
 export class UserService {
 
+
+  @Output() isLoggedIn: boolean;
   @Output() fireIsLoggedIn: EventEmitter<any> = new EventEmitter<any>();
 
   constructor(private http: HttpClient) { }

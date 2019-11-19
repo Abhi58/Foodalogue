@@ -38,11 +38,14 @@
                                                 <span class="btncntnt" (click)="goToMaps(res)">View in Maps</span>
                                             </button>
                                         </div>
-                                        <div class="links col-sm-4" *ngIf=" save[i]">
-                                            <button mat-button (click)="saveRestaurant(res,i)">
-                                                <i class="material-icons" style="color: rgb(68, 68, 68);">library_add</i>
-                                                <span class="btncntnt"> Add to Favorites</span>
-                                            </button>
+
+                                        <div *ngIf="loggedIn">
+                                            <div class="links col-sm-4" *ngIf=" save[i]">
+                                                <button mat-button (click)="saveRestaurant(res,i)">
+                                                    <i class="material-icons" style="color: rgb(68, 68, 68);">library_add</i>
+                                                    <span class="btncntnt"> Add to Favorites</span>
+                                                </button>
+                                            </div>
                                         </div>
                                         <div class="links col-sm-4" *ngIf="!visible[i] || !save[i]">
                                             <button mat-button disabled>

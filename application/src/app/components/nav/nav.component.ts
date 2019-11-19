@@ -29,11 +29,14 @@ export class NavComponent implements OnInit{
         this.account_disp = false;
         this.user = data[0].user_first_name;
         this.favorite.setName(this.user);
+        this.userService.isLoggedIn = true;
+        
       }
 
       else {
         console.log("DATA is Null")
         this.user = null;
+        this.userService.isLoggedIn = false;
       }
     });
 
@@ -41,6 +44,7 @@ export class NavComponent implements OnInit{
 reset(){
   this.loggedIn = false;
   this.account_disp =true;
+  this.userService.isLoggedIn = false;
 }
 
 }
