@@ -52,9 +52,9 @@ export class DisplayComponent implements OnInit {
       (data: any) => {
 
         if(data != null){
-          console.log("Saved");
+
         } else {
-          window.alert("User not logged in");
+
         }
 
       });

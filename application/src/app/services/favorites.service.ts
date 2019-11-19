@@ -27,7 +27,6 @@ export class FavoritesService {
   
     saveFavorite(restaurantUrl, restaurantThumb,restaurantCuisine,restaurantName, restaurantAddress, userRating, ratingText, restaurantMenuUrl) {
       this.userId = this.getName();
-      console.log(this.userId);
 
       return this.http.post(environment.favoritesUrl, {'user_id': this.userId, 'restaurant_url': restaurantUrl, 'restaurant_thumb': restaurantThumb, 'restaurant_cuisine': restaurantCuisine, 'restaurant_name': restaurantName, 'restaurant_address': restaurantAddress, 'user_rating': userRating, 'rating_text': ratingText, 'restaurant_menu_url': restaurantMenuUrl }, this.httpOptions)//send post request
         .toPromise()

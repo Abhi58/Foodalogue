@@ -1,51 +1,50 @@
 <br>
 <div class="row well col-sm-12">
-    <div *ngIf="favoritesData">
-        <div *ngFor="let res of favoritesData">
-            <mat-card class="mat-elevation-z4 contents">
-                <mat-card-header fxLayout="row">
-                    <div class="col-sm-3">
-                        <a href="">
-                            <img class="img-responsive imgsz" src="" alt="No Image Available">
-                        </a>
-                    </div>
-                    <div class="col-sm-9">
-                                    <mat-card-title>
-                                        <p class="cuisine"></p>
-                                        <a href="" id="resname">Name</a>
-                                        <Address class="address">address</Address>
-                                    </mat-card-title>
-                                    <mat-divider></mat-divider>
-                                    <br>
-                                    <mat-card-content>
-                                        <span class="keys col-sm-4">PRICE :</span>
-                                        <br>
-                                        <span class="keys col-sm-4">RATING :</span>
-                                        <br>
-                                        <span class="keys col-sm-4">REVIEW :</span>
-                                    </mat-card-content>
-                                    <mat-divider></mat-divider>
-                                    <mat-card-footer>
-                                        <div class="links col-sm-3">
-                                            <button mat-button>
-                                                <i class="material-icons" style="color: rgb(68, 68, 68);">menu_book</i>
-                                                <span class="btncntnt">View Menu</span>
-                                            </button>
-                                        </div>
-                                        <div class="links col-sm-3">
-                                            <button mat-button>
-                                                <i class="material-icons" style="color: rgb(68, 68, 68);">directions</i>
-                                                <span class="btncntnt">View in Maps</span>
-                                            </button>
-                                        </div>
+  <div *ngIf="favoritesData">
+    <div *ngFor="let res of favoritesData">
+      <mat-card class="mat-elevation-z4 contents">
+        <mat-card-header fxLayout="row">
+          <div class="col-sm-3">
+            <a href="">
+              <img class="img-responsive imgsz" src="" alt="No Image Available">
+            </a>
+          </div>
+          <div class="col-sm-9">
+            <mat-card-title>
+              <p class="cuisine"></p>
+              <a href="" id="resname">{{res.restaurant_name}}</a>
+              <Address class="address">address</Address>
+            </mat-card-title>
+            <mat-divider></mat-divider>
+            <br>
+            <mat-card-content>
+              <span class="keys col-sm-4">PRICE :</span>
+              <br>
+              <span class="keys col-sm-4">RATING :</span>
+              <br>
+              <span class="keys col-sm-4">REVIEW :</span>
+            </mat-card-content>
+            <mat-divider></mat-divider>
+            <mat-card-footer>
+              <div class="links col-sm-3">
+                <button mat-button>
+                  <i class="material-icons" style="color: rgb(68, 68, 68);">menu_book</i>
+                  <span class="btncntnt">View Menu</span>
+                </button>
+              </div>
+              <div class="links col-sm-3">
+                <button mat-button>
+                  <i class="material-icons" style="color: rgb(68, 68, 68);">directions</i>
+                  <span class="btncntnt">View in Maps</span>
+                </button>
+              </div>
 
-                                    </mat-card-footer>  
+            </mat-card-footer>
 
-                    </div>
-                    
-                </mat-card-header>
-            </mat-card>
-        </div>
+          </div>
+
+        </mat-card-header>
+      </mat-card>
     </div>
+  </div>
 </div>
-
