@@ -16,8 +16,8 @@ export class DisplayComponent implements OnInit {
   name: string;
   address: string;
   restaurantUrl: any; restaurantThumb: any; restaurantCuisine: any; restaurantName: any;
-  restaurantAddress: any; userRating: any;
-  restaurantMenuUrl: any; ratingText: any;
+  restaurantAddress: any; userRating: any; currency: any;
+  restaurantMenuUrl: any; ratingText: any; price: any;
   loggedIn: boolean;
 
 
@@ -45,19 +45,13 @@ export class DisplayComponent implements OnInit {
     this.restaurantAddress = restaurant.restaurant.location.address;
     this.restaurantCuisine = restaurant.restaurant.cuisines;
     this.userRating = restaurant.restaurant.user_rating.aggregate_rating;
-    this.ratingText = restaurant.restaurant.user_rating.ratingText;
+    this.ratingText = restaurant.restaurant.user_rating.rating_text;
     this.restaurantMenuUrl = restaurant.restaurant.menu_url;
+    this.currency = restaurant.restaurant.currency;
+    this.price = restaurant.restaurant.average_cost_for_two;
 
-    this.favorite.saveFavorite(this.restaurantUrl, this.restaurantThumb, this.restaurantCuisine, this.restaurantName, this.restaurantAddress, this.userRating, this.ratingText, this.restaurantMenuUrl).then(
-      (data: any) => {
 
-        if(data != null){
-
-        } else {
-
-        }
-
-      });
+    this.favorite.saveFavorite(this.restaurantUrl, this.restaurantThumb, this.restaurantCuisine, this.restaurantName, this.restaurantAddress, this.userRating, this.ratingText, this.currency, this.price, this.restaurantMenuUrl);
 
     this.visible = this.visible.map((value, i) => {
           if (i === index) {

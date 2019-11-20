@@ -28,12 +28,15 @@ const FavoriteSchema = mongoose.Schema({
         required: true
     },
     user_rating: {
-        type: Number
+        type: Number,
     },
-    restaurant_latitude: {
-        type: Number
+    rating_text: {
+        type: String
     },
-    restaurant_longitude: {
+    currency: {
+        type: String
+    },
+    price: {
         type: Number
     },
     restaurant_menu_url: {

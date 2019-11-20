@@ -10,10 +10,12 @@ export class FavoritesComponent implements OnInit {
 
   favoritesData: any;
   userId: any;
-  constructor(private favorite: FavoritesService) { 
+  name: any;
+  address: any;
+
+  constructor(private favorite: FavoritesService) {
 
   }
-
 
   ngOnInit() {
       this.userId = this.favorite.getName();
@@ -24,6 +26,12 @@ export class FavoritesComponent implements OnInit {
             console.log(data);
           }
         });
+  }
+
+  goToMaps(restaurant) {
+    this.name = restaurant.restaurant_name;
+    this.address = restaurant.restaurant_address;
+    window.location.href = 'https://www.google.com/maps/search/?api=1&query=' + this.name + ',' + this.address;
   }
 
 
