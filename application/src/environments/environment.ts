@@ -8,6 +8,7 @@ export const environment = {
   signupUrl: 'http://localhost:3000/signup',
   favoritesUrl: 'http://localhost:3000/favorites',
   usersFavoritesUrl: 'http://localhost:3000/allFavorites',
+  deleteFavoriteUrl: 'http://localhost:3000/favorites/deleteFav',
 
   debugMode: false
 };

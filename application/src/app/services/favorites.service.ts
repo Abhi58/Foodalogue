@@ -42,5 +42,11 @@ export class FavoritesService {
     .catch((err) => err.message);
   }
 
+  deleteFavorite(restaurantName) {
+    this.userId = this.getName();
+
+    return
+  }
+
 
 }
