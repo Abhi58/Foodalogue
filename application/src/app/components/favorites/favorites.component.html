@@ -55,4 +55,14 @@
       </mat-card>
     </div>
   </div>
+
+  <div *ngIf="!favoritesData">
+    <div *ngIf="!loggedIn">
+      <p>Please login to view favorites</p>
+    </div>
+    <div *ngIf="loggedIn">
+      <p>You have not saved any favorites</p>
+    </div>
+
+  </div>
 </div>

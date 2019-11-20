@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FavoritesService } from 'src/app/services/favorites.service';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-favorites',
@@ -12,13 +13,15 @@ export class FavoritesComponent implements OnInit {
   userId: any;
   name: any;
   address: any;
+  loggedIn: any;
 
-  constructor(private favorite: FavoritesService) {
+  constructor(private favorite: FavoritesService, private user: UserService) {
 
   }
 
   ngOnInit() {
       this.userId = this.favorite.getName();
+      this.loggedIn = this.user.isLoggedIn;
       this.favorite.getFavorites(this.userId).then(
         (data: any) => {
           if (data != null) {

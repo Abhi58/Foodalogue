@@ -18,6 +18,7 @@ exports.findUser = async (req, res) => {
 exports.save = async (req, res) => {
 
     const newUser = new User(req.body);
+    console.log(newUser);
 
     try {
         const checkUser =  await User.find({ user_name: req.body.user_name});

@@ -24,7 +24,7 @@ export class RegisterComponent implements OnInit {
       (data:any) => {
 
         if (data != null){
-          
+          console.log(data);
           this.router.navigate(['login'])
 
         }
