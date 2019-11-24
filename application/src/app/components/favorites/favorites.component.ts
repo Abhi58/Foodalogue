@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FavoritesService } from 'src/app/services/favorites.service';
 import { UserService } from 'src/app/services/user.service';
+import { MatSnackBar } from '@angular/material';
 
 @Component({
   selector: 'app-favorites',
@@ -13,7 +14,7 @@ export class FavoritesComponent implements OnInit {
   userId: any;
   name: any;
   address: any;
-  loggedIn: any;
+  loggedIn = false;
 
   constructor(private favorite: FavoritesService, private user: UserService) {
 
@@ -21,12 +22,16 @@ export class FavoritesComponent implements OnInit {
 
   ngOnInit() {
       this.userId = this.favorite.getName();
-      this.loggedIn = this.user.isLoggedIn;
+      if (this.user.isLoggedIn === true) {
+        this.loggedIn = this.user.isLoggedIn;
+      }
       this.favorite.getFavorites(this.userId).then(
         (data: any) => {
           if (data != null) {
             this.favoritesData = data;
-            console.log(data);
+          }
+          if (data === null) {
+            this.favoritesData = true;
           }
         });
   }
@@ -36,7 +41,6 @@ export class FavoritesComponent implements OnInit {
     this.address = restaurant.restaurant_address;
     window.location.href = 'https://www.google.com/maps/search/?api=1&query=' + this.name + ',' + this.address;
   }
-
 
 
 }

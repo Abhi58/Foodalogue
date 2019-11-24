@@ -44,7 +44,7 @@
               <div class="links col-sm-4">
                 <button mat-button>
                   <i class="material-icons" style="color: rgb(68, 68, 68);">delete</i>
-                  <span class="btncntnt">Remove from Favorites</span>
+                  <span class="btncntnt" (click) = >Remove from Favorites</span>
                 </button>
               </div>
 
@@ -55,14 +55,11 @@
       </mat-card>
     </div>
   </div>
+  
+  <span *ngIf="!loggedIn">Please login to view favorites</span>
+  <span *ngIf="loggedIn">
+    <span *ngIf="favoritesData">You don't have any favorites</span>
+  </span>
 
-  <div *ngIf="!favoritesData">
-    <div *ngIf="!loggedIn">
-      <p>Please login to view favorites</p>
-    </div>
-    <div *ngIf="loggedIn">
-      <p>You have not saved any favorites</p>
-    </div>
-
-  </div>
 </div>
+

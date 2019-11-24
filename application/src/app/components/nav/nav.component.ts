@@ -3,6 +3,7 @@ import { Observable } from 'rxjs';
 import { UserService } from 'src/app/services/user.service';
 import { FavoritesService } from 'src/app/services/favorites.service';
 import { Router } from '@angular/router';
+import { MatSnackBar } from '@angular/material';
 
 
 @Component({
@@ -18,15 +19,13 @@ export class NavComponent implements OnInit{
   user:any;
   user_id: any;
 
-  constructor(private userService: UserService, private favorite: FavoritesService, private router: Router) {
+
+  constructor(private userService: UserService, private favorite: FavoritesService, private router: Router, private matSnackBar: MatSnackBar) {
 
   }
 
   ngOnInit(){
     this.userService.getEmitter().subscribe((data) => {
-      console.log("Component is notified of successfull login!");
-      console.log(data);
-      
       
       if (data.length === 1){
         this.loggedIn = true;
@@ -39,7 +38,6 @@ export class NavComponent implements OnInit{
       }
 
       else {
-        console.log("DATA is Null")
         this.user = null;
         this.userService.isLoggedIn = false;
       }
@@ -51,6 +49,8 @@ reset(){
   this.account_disp =true;
   this.userService.isLoggedIn = false;
 }
+
+
 
 
 }

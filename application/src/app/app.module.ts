@@ -10,7 +10,7 @@ import { SearchComponent } from './components/search/search.component';
 import { SearchService } from './services/search.service';
 
 import {MatButtonModule} from '@angular/material/button';
-import {MatMenuModule, MatFormFieldModule, MatInputModule} from '@angular/material';
+import {MatMenuModule, MatFormFieldModule, MatInputModule, MatSnackBarModule} from '@angular/material';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -62,6 +62,7 @@ import { UserService } from './services/user.service';
     MatCardModule,
     MatPaginatorModule,
     MatDividerModule,
+    MatSnackBarModule,
     HttpClientModule,
     MatFormFieldModule,
     MatInputModule,
