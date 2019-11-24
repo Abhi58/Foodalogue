@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FavoritesService } from 'src/app/services/favorites.service';
 import { UserService } from 'src/app/services/user.service';
+import { Favorites } from 'src/app/models/favorites';
 
 @Component({
   selector: 'app-display',
