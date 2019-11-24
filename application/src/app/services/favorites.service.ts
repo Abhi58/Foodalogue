@@ -42,10 +42,12 @@ export class FavoritesService {
     .catch((err) => err.message);
   }
 
-  deleteFavorite(restaurantName) {
-    this.userId = this.getName();
+  deleteFavorite(userId, restaurantName) {
 
-    return
+    return this.http.post(environment.deleteFavoriteUrl, {user_id: userId, restaurant_name: restaurantName}, this.httpOptions)
+    .toPromise()
+    .then((res) => res)
+    .catch((err) => err.message);
   }
 
 

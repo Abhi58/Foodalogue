@@ -16,7 +16,7 @@ export class FavoritesComponent implements OnInit {
   address: any;
   loggedIn = false;
 
-  constructor(private favorite: FavoritesService, private user: UserService) {
+  constructor(private favorite: FavoritesService, private user: UserService, private snackBar: MatSnackBar) {
 
   }
 
@@ -42,5 +42,13 @@ export class FavoritesComponent implements OnInit {
     window.location.href = 'https://www.google.com/maps/search/?api=1&query=' + this.name + ',' + this.address;
   }
 
+  removeFav(restaurant) {
+    this.userId = this.favorite.getName();
+    this.name = restaurant.restaurant_name;
+    this.favorite.deleteFavorite(this.userId, this.name).then(
+      (data: any) => {
+          console.log(data);
 
+      });
+  }
 }

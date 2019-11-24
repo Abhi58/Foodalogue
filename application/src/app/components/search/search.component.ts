@@ -26,7 +26,6 @@ export class SearchComponent implements OnInit {
       (data) => {
         if (data != null) {
           this.list = true;
-          console.log(data);
           this.restaurants = data;
         } else {
           this.restaurants = null;
