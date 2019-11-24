@@ -19,7 +19,8 @@ export class SearchService {
   }
 
   public getAllRestaurants(cityId, cuisineName): Promise<any> {
-    return this.httpClient.get<Res>(`https://developers.zomato.com/api/v2.1/search?entity_id=${cityId}&entity_type=city&q=${cuisineName}&count=20;`,
+    return this.httpClient.get<Res>(`https://developers.zomato.com/api/v2.1/search?entity_id=${cityId}&entity_type=city
+                                    &q=${cuisineName}&count=20;`,
                     {headers: this.headers})
                     .toPromise()
                     .then(

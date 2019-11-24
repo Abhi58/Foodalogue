@@ -17,8 +17,8 @@ export class DisplayComponent implements OnInit {
   name: string;
   address: string;
   restaurantUrl: any; restaurantThumb: any; restaurantCuisine: any; restaurantName: any;
-  restaurantAddress: any; userRating: any; currency: any;
-  restaurantMenuUrl: any; ratingText: any; price: any;
+  restaurantAddress: any; userRating: any; resCurrency: any;
+  restaurantMenuUrl: any; ratingText: any; resPrice: any;
   loggedIn: boolean;
 
 
@@ -30,9 +30,9 @@ export class DisplayComponent implements OnInit {
     this.visible = new Array(this.restaurantData.length).fill(true);
     this.save = new Array(this.restaurantData.length).fill(true);
 
-    if(this.userService.isLoggedIn === true){
+    if (this.userService.isLoggedIn === true) {
       this.loggedIn = true;
-    } else{
+    } else {
       this.loggedIn = false;
     }
 
@@ -48,11 +48,13 @@ export class DisplayComponent implements OnInit {
     this.userRating = restaurant.restaurant.user_rating.aggregate_rating;
     this.ratingText = restaurant.restaurant.user_rating.rating_text;
     this.restaurantMenuUrl = restaurant.restaurant.menu_url;
-    this.currency = restaurant.restaurant.currency;
-    this.price = restaurant.restaurant.average_cost_for_two;
+    this.resCurrency = restaurant.restaurant.currency;
+    this.resPrice = restaurant.restaurant.average_cost_for_two;
 
 
-    this.favorite.saveFavorite(this.restaurantUrl, this.restaurantThumb, this.restaurantCuisine, this.restaurantName, this.restaurantAddress, this.userRating, this.ratingText, this.currency, this.price, this.restaurantMenuUrl);
+    this.favorite.saveFavorite(this.restaurantUrl, this.restaurantThumb, this.restaurantCuisine,
+      this.restaurantName, this.restaurantAddress, this.userRating, this.ratingText,
+      this.resCurrency, this.resPrice, this.restaurantMenuUrl);
 
     this.visible = this.visible.map((value, i) => {
           if (i === index) {

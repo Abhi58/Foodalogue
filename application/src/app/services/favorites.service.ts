@@ -25,10 +25,16 @@ export class FavoritesService {
   getName() {
     return this.name;
   }
-  
-    saveFavorite(restaurantUrl, restaurantThumb,restaurantCuisine,restaurantName, restaurantAddress, userRating, ratingText, currency, price, restaurantMenuUrl) {
+
+    saveFavorite(restaurantUrl, restaurantThumb, restaurantCuisine, restaurantName,
+                 restaurantAddress, userRating, ratingText, resCurrency, resPrice, restaurantMenuUrl) {
       this.userId = this.getName();
-      return this.http.post(environment.favoritesUrl, {'user_id': this.userId, 'restaurant_url': restaurantUrl, 'restaurant_thumb': restaurantThumb, 'restaurant_cuisine': restaurantCuisine, 'restaurant_name': restaurantName, 'restaurant_address': restaurantAddress, 'user_rating': userRating, 'rating_text': ratingText, 'currency': currency, 'price': price, 'restaurant_menu_url': restaurantMenuUrl }, this.httpOptions)//send post request
+      return this.http.post(environment.favoritesUrl, {user_id: this.userId,
+              restaurant_url: restaurantUrl, restaurant_thumb: restaurantThumb,
+              restaurant_cuisine: restaurantCuisine, restaurant_name: restaurantName,
+              restaurant_address: restaurantAddress, user_rating: userRating,
+              rating_text: ratingText, currency: resCurrency, price: resPrice,
+              restaurant_menu_url: restaurantMenuUrl }, this.httpOptions)
         .toPromise()
         .then((res) => res)
         .catch((err) => err.message);
