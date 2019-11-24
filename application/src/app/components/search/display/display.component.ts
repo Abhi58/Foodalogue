@@ -27,8 +27,8 @@ export class DisplayComponent implements OnInit {
    }
 
   ngOnInit() {
-    this.visible = new Array(this.restaurantData.length).fill(true);
-    this.save = new Array(this.restaurantData.length).fill(true);
+    this.visible = new Array(20).fill(true);
+    this.save = new Array(20).fill(true);
 
     if (this.userService.isLoggedIn === true) {
       this.loggedIn = true;

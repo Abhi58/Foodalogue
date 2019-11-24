@@ -1,7 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FavoritesService } from 'src/app/services/favorites.service';
 import { UserService } from 'src/app/services/user.service';
-import { MatSnackBar } from '@angular/material';
 
 @Component({
   selector: 'app-favorites',
@@ -16,7 +15,7 @@ export class FavoritesComponent implements OnInit {
   address: any;
   loggedIn = false;
 
-  constructor(private favorite: FavoritesService, private user: UserService, private snackBar: MatSnackBar) {
+  constructor(private favorite: FavoritesService, private user: UserService) {
 
   }
 

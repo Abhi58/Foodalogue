@@ -3,7 +3,6 @@ import { Observable } from 'rxjs';
 import { UserService } from 'src/app/services/user.service';
 import { FavoritesService } from 'src/app/services/favorites.service';
 import { Router } from '@angular/router';
-import { MatSnackBar } from '@angular/material';
 
 
 @Component({
@@ -20,7 +19,7 @@ export class NavComponent implements OnInit{
   user_id: any;
 
 
-  constructor(private userService: UserService, private favorite: FavoritesService, private router: Router, private matSnackBar: MatSnackBar) {
+  constructor(private userService: UserService, private favorite: FavoritesService, private router: Router) {
 
   }
 
