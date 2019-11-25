@@ -72,7 +72,7 @@ import { UserService } from './services/user.service';
     NgbModule,
     RatingModule.forRoot()
   ],
-  providers: [SearchService, FavoritesService, UserService, NavComponent],
+  providers: [SearchService, FavoritesService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
